@@ -13,3 +13,14 @@ def simulate_one_path(starting_bankroll, hourly_winrate, hourly_std_dev, hours_p
         history.append(bankroll)
     
     return history
+
+def simulate_many_paths(starting_bankroll, hourly_winrate, hourly_std_dev, hours_per_month, months, num_sims):
+
+    all_paths = np.zeros((num_sims, months+1))
+
+    for sim in range(num_sims):
+        path = simulate_one_path(starting_bankroll, hourly_winrate, hourly_std_dev, hours_per_month, months)
+        all_paths[sim] = path
+    
+    return all_paths
+
