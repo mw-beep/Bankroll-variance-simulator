@@ -1,5 +1,6 @@
 from src import config
 from src.simulator import simulate_one_path, simulate_many_paths
+from src.stats import calculate_summary
 
 path = simulate_one_path(starting_bankroll=config.STARTING_BANKROLL, 
                          hourly_winrate=config.HOURLY_WINRATE, 
@@ -20,3 +21,7 @@ all_paths = simulate_many_paths(starting_bankroll=config.STARTING_BANKROLL,
 print("------------MANY PATHS-----------")
 print(all_paths)
 print(all_paths.shape)
+
+print('\nSUMMARY RESULTS:')
+results = calculate_summary(all_paths)
+print(results)
