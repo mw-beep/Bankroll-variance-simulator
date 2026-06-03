@@ -29,4 +29,4 @@ print(results)
 
 print('-------------------------')
 
-summary_report(results)
+summary_report(results, months=config.MONTHS)

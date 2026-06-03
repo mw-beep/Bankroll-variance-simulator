@@ -10,3 +10,6 @@ Project outline:
 
 Additional goals post MVP:
 - plot outcomes on a graph using matplotlib, showing average, bottom 10% and top 10% bankroll outcomes. 
+- ask for user input as an alternative to using config file
+- add probability of X months downswing
+- add average downswing length
