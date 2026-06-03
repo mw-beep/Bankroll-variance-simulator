@@ -13,3 +13,4 @@ Additional goals post MVP:
 - ask for user input as an alternative to using config file
 - add probability of X months downswing
 - add average downswing length
+- add number of simulations in report and time taken to compute

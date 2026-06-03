@@ -8,25 +8,19 @@ path = simulate_one_path(starting_bankroll=config.STARTING_BANKROLL,
                          hourly_std_dev=config.HOURLY_STD_DEV, 
                          hours_per_month=config.HOURS_PER_MONTH, 
                          months=config.MONTHS)
-print(path)
-print(len(path))
 
-sim_number = 10_000
 
 all_paths = simulate_many_paths(starting_bankroll=config.STARTING_BANKROLL, 
                          hourly_winrate=config.HOURLY_WINRATE, 
                          hourly_std_dev=config.HOURLY_STD_DEV, 
                          hours_per_month=config.HOURS_PER_MONTH, 
-                         months=config.MONTHS, num_sims=sim_number)
+                         months=config.MONTHS, num_sims=config.NUM_SIMULATIONS)
 
-print("------------MANY PATHS-----------")
-print(all_paths)
-print(all_paths.shape)
 
-print('\nSUMMARY RESULTS:')
+
 results = calculate_summary(all_paths)
-print(results)
+
 
 print('-------------------------')
 
-summary_report(results, months=config.MONTHS)
+summary_report(results, months=config.MONTHS, starting_bankroll=config.STARTING_BANKROLL)
