@@ -8,4 +8,5 @@ def summary_report(results, months, starting_bankroll):
           f'\n 10th percentile outcome: £{results["bottom_10_percentile"]:,.2f} '
           f'\n 5th percentile outcome: £{results["bottom_5_percentile"]:,.2f} '
           f'\n 90th percentile outcome: £{results["top_10_percentile"]:,.2f} '
-          f'\n 95th percentile outcome: £{results["top_5_percentile"]:,.2f} ') 
+          f'\n 95th percentile outcome: £{results["top_5_percentile"]:,.2f} \n'
+          f'\n Risk of ruin:  {100*results["risk_of_ruin"]:,.2f}%') 
