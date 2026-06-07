@@ -11,12 +11,14 @@ def plot(all_paths, num_simulations):
     bottom_10_path = sorted_results[int(num_simulations * 0.1)]
     top_10_path = sorted_results[int(num_simulations * 0.9)]
 
-    average_path = sorted_results[int(num_simulations * 0.5)]
+    median_path = sorted_results[int(num_simulations * 0.5)]
+    average_path = np.mean(all_paths, axis = 0)
 
     x_axis = np.arange(all_paths.shape[1])
     plt.plot(x_axis, bottom_5_path, marker='x', label = 'Bottom 5% path')
     plt.plot(x_axis, bottom_10_path, marker='x', label = 'Bottom 10% path')
-    plt.plot(x_axis, average_path, marker='x', label = 'Average path')
+    plt.plot(x_axis, median_path, marker='x', label = 'Median path')
+    plt.plot(x_axis, average_path, marker = 'x', label = 'Average path')
     plt.plot(x_axis, top_5_path, marker='x', label = 'Top 5% path')
     plt.plot(x_axis, top_10_path, marker='x', label = 'Top 10% path')
 
@@ -25,7 +27,7 @@ def plot(all_paths, num_simulations):
     plt.grid(True, alpha = 0.3)
 
     plt.xlabel('Month')
-    plt.ylabel('Bankroll')
+    plt.ylabel('Bankroll / GBP')
     plt.title('Selected bankroll simulation paths')
     plt.legend()
     plt.show()
