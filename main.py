@@ -2,6 +2,7 @@ from src import config
 from src.simulator import simulate_one_path, simulate_many_paths
 from src.stats import calculate_summary
 from src.report import summary_report
+from src.plotting import plot
 
 path = simulate_one_path(starting_bankroll=config.STARTING_BANKROLL, 
                          hourly_winrate=config.HOURLY_WINRATE, 
@@ -24,3 +25,4 @@ results = calculate_summary(all_paths)
 print('-------------------------')
 
 summary_report(results, months=config.MONTHS, starting_bankroll=config.STARTING_BANKROLL)
+plot(all_paths, num_simulations=config.NUM_SIMULATIONS)
